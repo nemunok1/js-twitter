@@ -20,4 +20,12 @@ function getUserName(client) {
 	});
 }
 
+function sendTweet(text) {
+	client.post('statuses/update', {status: text}, function(error, tweet, response) {
+		console.log(tweet.text);
+	});
+}
+
+sendTweet("こんにちは.");
+
 
